@@ -27,14 +27,10 @@ to criu to allow Checkpoint / Restore with ROCm.
 
 
 Dependencies
-~~~~~~~~~~~~~~
+------------
 *amdkfd support*::
     In order to snapshot the *VRAM* and other *GPU* device states, we require
-    an updated version of amdkfd(amdgpu) driver. The kernel patches are under
-    review currently.
-
-*criu 3.16*::
-    This work is rebased on latest criu release available at this time.
+    an updated version of amdkfd(amdgpu) driver.
 
 OPTIONS
 -------
@@ -96,6 +92,15 @@ executing criu command.
 
     E.g:
     KFD_CAPABILITY_CHECK=1
+
+*KFD_MAX_BUFFER_SIZE*::
+    On some systems, VRAM sizes may exceed RAM sizes, and so buffers for dumping
+    and restoring VRAM may be unable to fit. Set to a nonzero value (in bytes)
+    to set a limit on the plugin's memory usage.
+    Default:0 (Disabled)
+
+    E.g:
+    KFD_MAX_BUFFER_SIZE="2G"
 
 
 AUTHOR

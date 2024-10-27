@@ -21,6 +21,7 @@ jobs:
           aarch64-stable-cross,
           ppc64-stable-cross,
           mips64el-stable-cross,
+          riscv64-stable-cross,
         ]
         include:
           - experimental: true
@@ -33,7 +34,7 @@ jobs:
             target: mips64el-unstable-cross
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Run Cross Compilation Targets
       run: >
         sudo make -C scripts/ci ${{ matrix.target }}

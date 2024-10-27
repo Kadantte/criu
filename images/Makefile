@@ -2,10 +2,12 @@ proto-obj-y	+= stats.o
 proto-obj-y	+= core.o
 proto-obj-y	+= core-x86.o
 proto-obj-y	+= core-mips.o
+proto-obj-y	+= core-loongarch64.o
 proto-obj-y	+= core-arm.o
 proto-obj-y	+= core-aarch64.o
 proto-obj-y	+= core-ppc64.o
 proto-obj-y	+= core-s390.o
+proto-obj-y	+= core-riscv64.o
 proto-obj-y	+= cpuinfo.o
 proto-obj-y	+= inventory.o
 proto-obj-y	+= fdinfo.o
@@ -72,6 +74,7 @@ proto-obj-y	+= bpfmap-file.o
 proto-obj-y	+= bpfmap-data.o
 proto-obj-y	+= apparmor.o
 proto-obj-y	+= rseq.o
+proto-obj-y	+= pidfd.o
 
 CFLAGS		+= -iquote $(obj)/
 
